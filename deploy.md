@@ -23,8 +23,6 @@ CREATE TABLE patrol_log (
     disk_usage DECIMAL(5,2),
     load_avg   DECIMAL(5,2)
 );
--- web_stat 字段以你服务器实际结构为准，执行下面命令确认后补全：
---   mysql -u root -e "SHOW CREATE TABLE ops.web_stat\G"
 
 ## 4. 部署脚本
 cd /root/patrol
@@ -42,3 +40,9 @@ crontab -l
 mysql -u root -e "USE ops; SELECT COUNT(*) FROM patrol_log;"
 ls -lh /root/patrol/report/
 tail -f /root/patrol/alert.log
+
+## 7. 完整建表语句
+第 3 节两张表的完整 DDL 见同目录 `schema.sql`，可直接执行：
+```bash
+mysql -u root < schema.sql
+```
