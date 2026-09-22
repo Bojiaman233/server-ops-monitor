@@ -1,0 +1,7 @@
+*.log
+*.swp
+report/
+.DS_Store
+.last_line
+.last_time
+out.txt
